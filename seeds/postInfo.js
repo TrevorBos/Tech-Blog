@@ -13,7 +13,7 @@ const userPostData = [
   },
   {
     postTitle: "The music of God of War!",
-    postContent: "What an amazin score.",
+    postContent: "What an amazing score.",
     userId: 3,
   },
 ];

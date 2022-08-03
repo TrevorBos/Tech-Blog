@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, Comment, User } = require('../models/');
+const { Post, Comment, User } = require('../models');
 const userAuth = require('../utils/authentication');
 
 // ALL POSTS

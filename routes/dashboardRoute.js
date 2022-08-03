@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User } = require("../models/");
+const { Post, User } = require("../models");
 const userAuth = require("../utils/authentication");
 
 // ALL POSTS DASHBOARD
@@ -16,7 +16,7 @@ router.get("/", userAuth, async (req, res) => {
       posts,
     });
   } catch (err) {
-    res.redirect("login");
+    res.redirect("/login");
   }
 });
 
@@ -42,7 +42,7 @@ router.get("/edit/:id", userAuth, async (req, res) => {
       res.status(404).end();
     }
   } catch (err) {
-    res.redirect("login");
+    res.redirect("/login");
   }
 });
 
