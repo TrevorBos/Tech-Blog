@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Post, User } = require("../models");
 const userAuth = require("../utils/authentication");
 
-// ALL POSTS DASHBOARD
+// ALL POSTS
 router.get("/", userAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -14,20 +14,21 @@ router.get("/", userAuth, async (req, res) => {
     res.render("allPostsUser", {
       layout: "dashboard",
       posts,
+      userName: req.session.username
     });
   } catch (err) {
     res.redirect("/login");
   }
 });
 
-// AFTER CLICK ON NEW POST BUTTON
+// NEW POST
 router.get("/new", userAuth, (req, res) => {
   res.render("newPost", {
     layout: "dashboard",
   });
 });
 
-// WHEN WE CLICK ON THE POST ITSELF
+// EDIT POST
 router.get("/edit/:id", userAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
