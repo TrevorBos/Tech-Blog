@@ -1,7 +1,7 @@
 // variables
 const router = require('express').Router();
 const { Comment } = require('../../models/');
-const userAuth = requrie('../../utils/authentication');
+const userAuth = require('../../utils/authentication');
 
 router.get('/', userAuth, async (req, res) => {
     try{ 
