@@ -13,7 +13,7 @@ router.get('/', userAuth, async (req, res) => {
    
      console.log(comments);
      
-     res.render('single-post', {comments, loggedIn: req.session.loggedIn});
+     res.render('singlePost', {comments, loggedIn: req.session.loggedIn});
    } catch(err) {
        res.status(500).json(err);
    }
