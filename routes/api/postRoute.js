@@ -10,13 +10,11 @@ router.post("/", userAuth, async (req, res) => {
     const newPost = await Post.create({ ...body, userId: req.session.userId });
 
     res.json(newPost);
-    res.redirect('/dashboard');
   } catch (err) {
     console.log("Your post failed to post.", err);
     res.status(500).json(err);
   }
 });
-
 // UPDATE
 router.put("/:id", userAuth, async (req, res) => {
   try {
