@@ -41,8 +41,13 @@ h2 a {
   color: var(--primary);
 }
 
-h2 a:hover{
+.navbar a:hover{
   font-size: larger;
+  border: 2px solid var(--light-dark);
+  border-radius: 15%;
+  background-color: var(--primary);
+  color:#382e38;
+  padding: 5;
 }
 
 header {
